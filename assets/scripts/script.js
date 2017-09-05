@@ -25,3 +25,5 @@ setInterval(function() {
         changeNav();
     }
 }, 100);
+
+// jQuery scroll
