@@ -6,7 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Lato', sans-serif;
     color: #454560;
 }
@@ -28,8 +28,18 @@ h3 {
     color: #eee;
 }
 
+#me {
+    width: 45%;
+    max-width: 280px;
+    box-shadow: 0px 5px 20px #0D47A1;
+    border-radius: 50%;
+    border: solid 2px #eee;
+    filter: saturate(50%);
+    z-index: 1;
+}
+
 .landing h1 {
-    width: 50%;
+    font-size: 1.5rem;
     max-width: 580px;
     text-align: center;
     text-shadow: 0px 1px 10px #0D47A1;
@@ -68,22 +78,18 @@ nav.scroll {
     opacity: 0.9;
 }
 
+nav.menu-open {
+    background: #1E88E5;
+}
+
 nav a {
     color: #eee;
     padding: 10px;
     text-decoration: none;
 }
 
-nav a:first-child {
+#js {
     margin-right: auto;
-}
-
-nav a:hover {
-    background: #42A5F5;
-    border-radius: 4px;
-}
-
-nav a.active {
     border-bottom: 2px solid #eee;
 }
 
@@ -91,31 +97,43 @@ nav a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    padding: 1.5rem;
+    width: 100%;
 }
 
-.menu {
+#menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    top: 3rem;
+    transition: visibility 0.2s;
+    transition: width 0.2s;
+}
+
+#menu a {
+    height: 3rem;
+    text-align: center;
+    width: 100%;
+}
+
+#menu.open {
+    visibility: visible;
+
+    width: 100%;
+    background: #1E88E5;
 
 }
 
-.menu-button {
-    display: none;
-}
-
-
-#me {
-    width: 25%;
-    max-width: 280px;
-    box-shadow: 0px 5px 20px #0D47A1;
-    border-radius: 50%;
-    border: solid 2px #eee;
-    filter: saturate(50%);
-    z-index: 1;
+#menu-button {
+    display: block;
 }
 
 .project {
     box-shadow: 2px 5px 10px #888;
-    margin: 2.5rem 0;
+    margin: 2.5rem 0.75rem;
+    font-size: 1.1rem;
 }
 
 .project-info {
@@ -124,6 +142,7 @@ nav a.active {
 
 .project-buttons {
     display: flex;
+    flex-direction: column;
     margin-top: auto;
     align-items: center;
     justify-content: center;
@@ -133,7 +152,7 @@ nav a.active {
 .project-buttons a {
     color: #eee;
     text-decoration: none;
-    width: 50%;
+    width: 100%;
     background: #1E88E5;
     text-align: center;
     padding: 10px 0;
@@ -153,5 +172,44 @@ nav a.active {
 
 h3 {
     margin: 0px;
+    font-size: 1.5rem;
+}
 
+@media screen and (min-width: 768px) {
+    nav {
+        height: 3.5rem;
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+        width: auto;
+        visibility: visible;
+        position: static;
+    }
+
+    #menu a {
+        text-align: inherit;
+        width: auto;
+    }
+
+    nav a:hover {
+        background: #1E88E5;
+        border-radius: 4px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    html, body {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .landing h1 {
+        width: 80%;
+    }
 }
