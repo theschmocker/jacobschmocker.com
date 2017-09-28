@@ -14,7 +14,7 @@ function scroll () {
 }
 
 function changeNav() {
-    if (document.body.scrollTop >= offset) {
+    if (window.pageYOffset >= offset) {
         nav.classList.add('scroll');
     } else {
         nav.classList.remove('scroll');
