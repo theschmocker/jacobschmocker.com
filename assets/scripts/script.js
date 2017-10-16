@@ -60,7 +60,7 @@ function setupResizeHandler() {
     window.addEventListener("resize", resizeThrottler, false);
 
     let resizeTimeout;
-    // 
+    // keeps the function from continuously firing while the window is being resized
     function resizeThrottler() {
         if (!resizeTimeout) {
             resizeTimeout = setTimeout(() => {
