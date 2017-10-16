@@ -9,6 +9,7 @@ function main() {
     setupMenuHandler();
     setupScrollHandler();
     setupResizeHandler();
+    lazyLoadImages();
 }
 
 function setupScrollHandler() {
@@ -69,6 +70,19 @@ function setupResizeHandler() {
                 landingHeight = document.getElementsByClassName('landing')[0].clientHeight;
                 offset = landingHeight - navHeight;
             }, 500);
+        }
+    }
+}
+
+function lazyLoadImages() {
+    let lazy = document.getElementsByClassName('lazy');
+
+    window.addEventListener('load', loadImages);
+
+    function loadImages() {
+        for (let i = 0; i < lazy.length; i++) {
+            lazy[i].src = lazy[i].getAttribute('data-src');
+            lazy[i].removeAttribute('data-src');
         }
     }
 }
