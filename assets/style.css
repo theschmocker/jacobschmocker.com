@@ -55,9 +55,14 @@ section h2 {
     font-size: 2rem;
     margin: 0 auto;
     margin-top: 2.5rem;
-    padding: 0px 0.5rem 0.5rem 0.5rem;
+    padding-bottom: 0.5rem;
     border-bottom: 3px solid #667;
     color: #556;
+}
+
+.about {
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 nav {
@@ -134,6 +139,7 @@ nav a {
     box-shadow: 2px 5px 10px #888;
     margin: 2.5rem 0.75rem;
     font-size: 1.1rem;
+    border-radius: 5px;
 }
 
 .project-info {
@@ -173,6 +179,18 @@ nav a {
 h3 {
     margin: 0px;
     font-size: 1.5rem;
+}
+
+.tech-grid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+}
+
+.tech {
+    width: 32%;
 }
 
 @media screen and (min-width: 768px) {
