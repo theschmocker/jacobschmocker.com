@@ -50,6 +50,3 @@ function toggleMenu(e) {
     }
 }
 
-
-
-// jQuery scroll
