@@ -29,8 +29,7 @@ h3 {
 }
 
 #me {
-    width: 45%;
-    max-width: 280px;
+    max-width: 210px;
     box-shadow: 0px 5px 20px #0D47A1;
     border-radius: 50%;
     border: solid 2px #eee;
@@ -223,6 +222,10 @@ h3 {
 @media screen and (min-width: 500px) {
     html, body {
         font-size: 20px;
+    }
+
+    #me {
+        width: 45%;
     }
 }
 
