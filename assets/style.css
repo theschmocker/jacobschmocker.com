@@ -47,13 +47,13 @@ h3 {
 section {
     max-width: 40rem;
     margin: 0 auto;
+    padding: 1rem;
+    font-size: 1.1rem;
 }
 
 section h2 {
-    width: fit-content;
     font-size: 2rem;
     margin: 0 auto;
-    margin-top: 2.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid #667;
     color: #556;
@@ -61,7 +61,10 @@ section h2 {
 
 .about {
     margin: 0 auto;
-    padding: 1rem;
+}
+
+.about p:first-of-type {
+    margin-top: 2rem;
 }
 
 nav {
@@ -134,10 +137,13 @@ nav a {
     display: block;
 }
 
+.projects {
+    margin-top: 2.5rem;
+}
+
 .project {
     box-shadow: 2px 5px 10px #888;
-    margin: 2.5rem 0.75rem;
-    font-size: 1.1rem;
+    margin: 2.5rem 0;
     border-radius: 5px;
 }
 
