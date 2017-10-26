@@ -1,7 +1,8 @@
 let landingHeight = document.getElementsByClassName('landing')[0].clientHeight,
     nav = document.getElementsByTagName('nav')[0],
     navHeight = nav.clientHeight,
-    offset = landingHeight - navHeight;
+    offset = landingHeight - navHeight,
+    contact = document.getElementsByClassName('contact')[0];
 
 main();
 
@@ -22,7 +23,7 @@ function setupScrollHandler() {
     }
     
     function changeNav() {
-        if (window.pageYOffset >= offset) {
+        if (window.pageYOffset >= offset && window.pageYOffset !== contact.offsetTop) {
             nav.classList.add('scroll');
         } else {
             nav.classList.remove('scroll');
