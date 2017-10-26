@@ -3,6 +3,7 @@
 }
 
 html, body {
+    background: #fefefe;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -74,9 +75,6 @@ section h2 {
 
 .about {
     margin: 0 auto;
-}
-
-.about h2 {
 }
 
 nav {
@@ -153,7 +151,7 @@ nav a {
     margin-top: 2.5rem;
 }
 
-.project-grid {
+.project-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -162,44 +160,36 @@ nav a {
 }
 
 .project {
-    width: 33%;
-    box-shadow: 0 2px 5px #888;
-    /* margin: 2.5rem 0; */
-    border-radius: 5px;
-}
-
-.project-info {
-    padding: 1rem;
-}
-
-.project-buttons {
+    margin: 1.0rem auto;
     display: flex;
     flex-direction: column;
-    margin-top: auto;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.project-buttons a {
-    color: #eee;
-    text-decoration: none;
-    width: 100%;
-    background: #1E88E5;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.project-buttons a:last-child {
-    background: #1565C0;
-}
-
-.project-buttons a:hover {
-    opacity: 0.8;
+    background: #eee;
 }
 
 .project img {
     width: 100%;
+}
+
+.project-content {
+    margin: 1.0rem;
+}
+
+.live-button {
+    background: #15bbc0;
+    color: #eee;
+    height: 50px;
+    padding: 10px;;
+}
+
+.github-button {
+    display: inline-block;
+    height: 50px;
+    padding: 10px;
+}
+
+.github-button svg {
+    display: inline-block;
+    width: 35px;
 }
 
 h3 {
