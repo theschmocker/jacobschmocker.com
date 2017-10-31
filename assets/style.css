@@ -160,42 +160,43 @@ nav a {
 }
 
 .project {
+    height: 250px;
     display: flex;
     margin: 1.0rem auto;
     display: flex;
     flex-direction: row;
     background: #eee;
+    box-shadow: 0px 2px 10px #999;
 }
 
 .project img {
-    height: 250px;
+    height: 100%;
+}
+
+.project-buttons {
+    display: flex;
+    margin-top: auto;
+    align-self: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+.project-buttons a {
+    color: #eee;
+    text-decoration: none;
+    width: 50%;
+    background: #1E88E5;
+    text-align: center;
+    padding: 10px 0;
 }
 
 .project-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info {
     margin: 1.0rem;
-}
-
-.live-button {
-    background: #15bbc0;
-    color: #eee;
-    height: 50px;
-    padding: 10px;;
-}
-
-.github-button {
-    display: inline-block;
-    height: 50px;
-    padding: 10px;
-}
-
-.github-button svg {
-    position: relative;
-    top: 35%;
-    margin-top: -.4em;
-    display: inline-block;
-    vertical-align: center;
-    width: 35px;
-    height: 35px;
 }
 
 h3 {
