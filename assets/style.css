@@ -154,9 +154,9 @@ nav a {
 .project-container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: space-between;
 }
 
 .project {
@@ -188,6 +188,14 @@ nav a {
     background: #1E88E5;
     text-align: center;
     padding: 10px 0;
+}
+
+.project-buttons a:hover {
+    opacity: 0.9;
+}
+
+.project-buttons .github {
+    background: #3F51B5;
 }
 
 .project-content {
