@@ -160,21 +160,21 @@ nav a {
 }
 
 .project {
-    height: 250px;
     display: flex;
     margin: 1.0rem auto;
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background: #eee;
     box-shadow: 0px 2px 10px #999;
 }
 
 .project img {
-    height: 100%;
+    height: auto;
+    width: 100%;
 }
 
 .project-buttons {
     display: flex;
+    flex-direction: column;
     margin-top: auto;
     align-self: flex-end;
     justify-content: center;
@@ -184,7 +184,7 @@ nav a {
 .project-buttons a {
     color: #eee;
     text-decoration: none;
-    width: 50%;
+    width: 100%;
     background: #1E88E5;
     text-align: center;
     padding: 10px 0;
@@ -297,6 +297,16 @@ h3 {
     .contact a {
         font-size: 1.5rem;
     }
+
+    .project {
+        height: 250px;
+        flex-direction: row;
+    }   
+
+    .project img {
+        height: 100%;
+        width: auto;
+    }
 }
 
 @media screen and (min-width: 500px) {
@@ -306,6 +316,14 @@ h3 {
 
     #me {
         width: 45%;
+    }
+
+    .project-buttons {
+        flex-direction: row;
+    }
+
+    .project-buttons a {
+        width: 50%;
     }
 }
 
