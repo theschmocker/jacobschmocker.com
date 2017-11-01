@@ -264,6 +264,11 @@ h3 {
     color: #454560;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (min-width: 768px) {
     nav {
         height: 3.5rem;

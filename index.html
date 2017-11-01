@@ -144,7 +144,18 @@
 
         <section class="contact">
             <h3>Send me some <em>words</em>!</h3>
-            <a href="mailto:jacobschmocker@gmail.com">Get in touch!</a>
+            <form action="http://localhost:3000/contact" method="post">
+                <label for="name">Name: </label>
+                <input name="name" type="text" id="name">
+            
+                <label for="email">Email: </label>
+                <input name="email" type="email" id="email">
+
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+                <input type="submit" value="Send">
+            </form>
         </section>
         <script src="assets/scripts/script.js" charset="utf-8"></script>
     </body>
