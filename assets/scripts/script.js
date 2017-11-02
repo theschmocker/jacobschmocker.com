@@ -91,18 +91,17 @@ function lazyLoadImages() {
 function send(data) {
     const endpoint = 'http://localhost:3000/contact';
     const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    headers.set('Content-Type', 'application/json');
 
     const myInit = {
         method: 'POST',
-        headers,
+        headers: headers,
         body: JSON.stringify(data),
-        cache: 'default'
     };
 
     fetch(endpoint, myInit)
         .then(response => {
             console.log(response);
         })
-        .catch(err => console.log)
+        .catch(err => console.log);
 }
