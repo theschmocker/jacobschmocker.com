@@ -93,13 +93,13 @@ function send(data) {
     const headers = new Headers();
     headers.set('Content-Type', 'application/json');
 
-    const myInit = {
+    const options = {
         method: 'POST',
         headers: headers,
         body: JSON.stringify(data),
     };
 
-    fetch(endpoint, myInit)
+    fetch(endpoint, options)
         .then(response => {
             console.log(response);
         })
