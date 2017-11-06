@@ -264,6 +264,55 @@ h3 {
     color: #454560;
 }
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.form-container.hidden {
+    height: 0;
+    opacity: 0;
+}
+
+.success-container.hidden {
+    
+    height: 0;
+    opacity: 0;
+}
+
+.success-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    opacity: 1;
+}
+
+.success-icon {
+    width: 200px;
+}
+.success-container.hidden circle {
+        stroke: #16ba63;
+        stroke-width: 5;
+        stroke-dasharray: 526.3765869140625px;
+        stroke-dashoffset: -526.3765869140625px;
+        fill: #eef;
+        transition:
+            stroke-dashoffset 0.5s ease 0.4s,
+            fill 0.4s ease;
+}
+.success-container circle {
+    fill: #16ba63;
+    stroke-dashoffset: 0;
+    transition:
+        stroke-dashoffset 0.5s ease,
+        fill 0.4s ease 0.5s;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -373,6 +422,10 @@ button[role="submit"] {
 
     .project-buttons a {
         width: 50%;
+    }
+
+    form {
+        max-width: 400px;
     }
 }
 
