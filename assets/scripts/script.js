@@ -1,3 +1,5 @@
+// TODO: Desperately-needed refactor
+
 let landingHeight = document.getElementsByClassName('landing')[0].clientHeight,
     nav = document.getElementsByTagName('nav')[0],
     navHeight = nav.clientHeight,
@@ -11,6 +13,7 @@ function main() {
     setupScrollHandler();
     setupResizeHandler();
     lazyLoadImages();
+    document.getElementsByTagName('form')[0].addEventListener('submit', formHandler);
 }
 
 function setupScrollHandler() {
@@ -88,6 +91,27 @@ function lazyLoadImages() {
     }
 }
 
+function formHandler(e) {
+    e.preventDefault();
+
+    const data = { 
+        name: document.querySelector('#name').value,
+        email: document.querySelector('#email').value,
+        message: document.querySelector('#message').value
+    };
+
+    send(data)
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
+
+    // reset form. will refactor to only reset only when
+    // success is received from the server
+    this.reset();
+}
+
+// Creates and sends a response to the contact server,
+// then returns a Promise to be handled in the calling scope
 function send(data) {
     const endpoint = 'http://localhost:3000/contact';
     const headers = new Headers();
@@ -99,9 +123,7 @@ function send(data) {
         body: JSON.stringify(data),
     };
 
-    fetch(endpoint, options)
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => console.log);
-}
+    return fetch(endpoint, options);
+} 
+
+function formFlash(){}
