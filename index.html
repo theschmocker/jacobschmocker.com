@@ -143,14 +143,24 @@
         <a name="contact"></a>
 
         <section class="contact">
-            <h3>Send me some <em>words</em>!</h3>
-            <form action="http://localhost:3000/contact" method="post">
-                <input name="name" type="text" id="name" placeholder="Name">
-                <input name="email" type="email" id="email" placeholder="Email">
-                <textarea name="message" id="message" placeholder="Message"></textarea>
-
-                <button role="submit">Send</button>
-            </form>
+            <div class="form-container">
+                <h3>Send me some <em>words</em>!</h3>
+                <form action="http://localhost:3000/contact" method="post">
+                    <input name="name" type="text" id="name" placeholder="Name" required>
+                    <input name="email" type="email" id="email" placeholder="Email" required>
+                    <textarea name="message" id="message" placeholder="Message" required></textarea>
+    
+                    <button role="submit">Send</button>
+                </form>
+            </div>
+            <div class="success-container hidden">
+                <svg class="success-icon" viewBox="0 0 187.82143 187.82143">
+                    <g transform="translate(-11.923 -99.146)">
+                        <circle cx="105.83" cy="193.06" r="83.911" />
+                        <path d="m52.893 190.56 48.733 40.71 61.161-72.035" stroke="#eef" stroke-width="7.5" fill="none" />
+                </svg>
+                <p>Sent!</p>
+            </div>
         </section>
         <script src="assets/scripts/script.js" charset="utf-8"></script>
     </body>
