@@ -269,57 +269,18 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 1;
-}
-
-.form-container.hidden {
-    height: 0;
-    opacity: 0;
-}
-
-.success-container.hidden {
-    
-    height: 0;
-    opacity: 0;
-}
-
-.success-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    opacity: 1;
-}
-
-.success-icon {
-    width: 200px;
-}
-.success-container.hidden circle {
-        stroke: #16ba63;
-        stroke-width: 5;
-        stroke-dasharray: 526.3765869140625px;
-        stroke-dashoffset: -526.3765869140625px;
-        fill: #eef;
-        transition:
-            stroke-dashoffset 0.5s ease 0.4s,
-            fill 0.4s ease;
-}
-.success-container circle {
-    fill: #16ba63;
-    stroke-dashoffset: 0;
-    transition:
-        stroke-dashoffset 0.5s ease,
-        fill 0.4s ease 0.5s;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 90%;
 }
 
 form input, form textarea {
+    width: 100%;
     margin-bottom: 0.75rem;
     padding: 0.3rem;
     background: rgba(0, 0, 0, 0.4);;
@@ -353,13 +314,50 @@ form textarea {
     opacity: 1;
 }
 
-button[role="submit"] {
-    padding: 1rem;
+#send-button {
+    width: 100%;
+    height: 3rem;
+    /* padding: 1rem; */
     border: none;
     border-radius: 3px;
     font-size: 1.5rem;
     color: #333;
     background: #1ebae5;
+    transition: all 0.25s ease;
+}
+
+#send-button::after {
+    content: "Send";
+}
+
+#send-button.loading {
+    width: 3rem;
+    border: 3px solid #555;
+    border-left-color: yellow;
+    border-radius: 40px;
+    animation: rotation 1s 0.25s linear infinite;
+}
+
+#send-button.loading::after {
+    content: "";
+}
+
+#send-button.sent {
+    width: 100%;
+}
+
+#send-button.sent::after {
+    color: white;
+    content: "\002714";
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    } 
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media screen and (min-width: 768px) {
