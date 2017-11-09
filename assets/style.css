@@ -328,6 +328,7 @@ form textarea {
 
 #send-button::after {
     content: "Send";
+    transition: all 0.25s ease;
 }
 
 #send-button.loading {
