@@ -94,20 +94,49 @@ function lazyLoadImages() {
 function formHandler(e) {
     e.preventDefault();
 
+    const form = this;
+    const submit = document.getElementById('send-button');
+
     const data = { 
         name: document.querySelector('#name').value,
         email: document.querySelector('#email').value,
         message: document.querySelector('#message').value
     };
 
+    formLoading(true);
+
     send(data)
         .then(response => response.json())
-        .then(result => console.log(result))
+        .then(result => {
+            console.log(result)
+            formLoading(false);
+            responseHandler(result);
+            form.reset();
+        })
         .catch(err => console.log(err));
 
-    // reset form. will refactor to only reset only when
-    // success is received from the server
-    this.reset();
+    // made this a closure so that submit was in scope. there might be a better way to do this...
+    function formLoading(isLoading) {
+        if (isLoading) {
+            submit.disable = true;
+            submit.classList.add('loading');
+        } else {
+            submit.disable = false;
+            submit.classList.remove('loading');
+        }
+    }
+
+    // closure here too
+    function responseHandler(response) {
+        if (response.message === "success") {
+            submit.classList.add('sent');
+            //  show sent confirmation for 2 seconds before resetting
+            setTimeout(() => submit.classList.remove('sent'), 2000);
+        } else {
+            // TODO: add an element to page displaying error message
+            console.log(response.message);
+        }
+    }
 }
 
 // Creates and sends a response to the contact server,
@@ -125,5 +154,3 @@ function send(data) {
 
     return fetch(endpoint, options);
 } 
-
-function formFlash(){}
