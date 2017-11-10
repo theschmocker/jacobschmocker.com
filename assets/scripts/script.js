@@ -109,9 +109,12 @@ function formHandler(e) {
         .then(response => response.json())
         .then(result => {
             console.log(result);
-            formLoading(false);
-            responseHandler(result);
-            form.reset();
+            // ensure that the loading animation is shown for at least 3 seconds
+            setTimeout(() => {
+                formLoading(false);
+                responseHandler(result);
+                form.reset();
+            }, 2000);
         })
         .catch(err => console.log(err));
 
