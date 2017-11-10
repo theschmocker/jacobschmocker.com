@@ -344,6 +344,7 @@ form textarea {
     border-left-color: #1ebde5;
     border-radius: 40px;
     cursor: inherit;
+    outline: none;
     animation: rotation 1s 0.25s linear infinite;
 }
 
@@ -352,10 +353,11 @@ form textarea {
 }
 
 #send-button.sent {
+    width: 100%;
     background: #16ba63;
     border: none;
     cursor: inherit;
-    width: 100%;
+    outline: none;
 }
 
 #send-button.sent::after {
