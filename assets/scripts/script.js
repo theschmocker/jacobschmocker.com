@@ -108,7 +108,7 @@ function formHandler(e) {
     send(data)
         .then(response => response.json())
         .then(result => {
-            console.log(result)
+            console.log(result);
             formLoading(false);
             responseHandler(result);
             form.reset();
