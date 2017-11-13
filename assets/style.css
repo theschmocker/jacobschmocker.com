@@ -367,6 +367,9 @@ form textarea {
 }
 
 .contact-form__error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     min-height: 3rem;
     margin-bottom: 0.75rem;
@@ -377,7 +380,6 @@ form textarea {
     opacity: 0;
     transition: opacity 0.25s;
     color: #eee;
-    line-height: 3rem;
     text-align: center;
 }
 
