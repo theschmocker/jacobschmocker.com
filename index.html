@@ -145,14 +145,14 @@
         <section class="contact">
             <div class="form-container">
                 <h3>Send me some <em>words</em>!</h3>
-                <form action="http://localhost:3000/contact" method="post">
+                <form action="https://jacobschmocker.com/contact" method="post">
                     <input name="name" type="text" id="name" placeholder="Name" required>
                     <input name="email" type="email" id="email" placeholder="Email" required>
                     <textarea name="message" id="message" placeholder="Message" required></textarea>
                     
                     <button id="send-button" role="submit"></button>
-                    <div class="contact-form__error" id="error" role="alert">
-                        
+                    <div class="contact-form__error" role="alert">
+                        <span id="error"></span>
                     </div>
                 </form>
             </div>

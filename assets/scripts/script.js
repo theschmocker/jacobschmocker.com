@@ -96,7 +96,8 @@ function formHandler(e) {
 
     const form = this;
     const submitButton = document.getElementById('send-button');
-    const errorAlert = document.getElementById('error');
+    const errorContainer = document.querySelector('.contact-form__error');
+    const errorMessage = document.getElementById('error');
 
     const data = { 
         name: document.querySelector('#name').value,
@@ -104,7 +105,7 @@ function formHandler(e) {
         message: document.querySelector('#message').value
     };
 
-    errorAlert.classList.remove('contact-form__error--visible');
+    errorContainer.classList.remove('contact-form__error--visible');
 
     formLoading(true);
 
@@ -144,12 +145,12 @@ function formHandler(e) {
             setTimeout(() => submitButton.classList.remove('sent'), 2000);
         } else {
             if (response.message === 'Failed to fetch') {
-                errorAlert.textContent = 'Can\'t connect to server.'
+                errorMessage.textContent = 'Can\'t connect to server.'
             } else {
-                errorAlert.textContent = response.message;
+                errorMessage.textContent = response.message;
             }
 
-            errorAlert.classList.add('contact-form__error--visible');
+            errorContainer.classList.add('contact-form__error--visible');
         }
     }
 }
@@ -157,7 +158,7 @@ function formHandler(e) {
 // Creates and sends a response to the contact server,
 // then returns a Promise to be handled in the calling scope
 function send(data) {
-    const endpoint = 'http://localhost:3000/contact';
+    const endpoint = 'https://jacobschmocker.com/contact';
     const headers = new Headers();
     headers.set('Content-Type', 'application/json');
 
