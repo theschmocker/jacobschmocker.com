@@ -95,13 +95,16 @@ function formHandler(e) {
     e.preventDefault();
 
     const form = this;
-    const submit = document.getElementById('send-button');
+    const submitButton = document.getElementById('send-button');
+    const errorAlert = document.getElementById('error');
 
     const data = { 
         name: document.querySelector('#name').value,
         email: document.querySelector('#email').value,
         message: document.querySelector('#message').value
     };
+
+    errorAlert.classList.remove('contact-form__error--visible');
 
     formLoading(true);
 
@@ -113,31 +116,40 @@ function formHandler(e) {
             setTimeout(() => {
                 formLoading(false);
                 responseHandler(result);
-                form.reset();
             }, 2000);
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            formLoading(false);
+            responseHandler({message: err.message});
+        });
 
-    // made this a closure so that submit was in scope. there might be a better way to do this...
+    // made this a closure so that submitButton was in scope. there might be a better way to do this...
     function formLoading(isLoading) {
         if (isLoading) {
-            submit.disable = true;
-            submit.classList.add('loading');
+            submitButton.disable = true;
+            submitButton.classList.add('loading');
         } else {
-            submit.disable = false;
-            submit.classList.remove('loading');
+            submitButton.disable = false;
+            submitButton.classList.remove('loading');
         }
     }
 
     // closure here too
     function responseHandler(response) {
+        console.log(response);
         if (response.message === "success") {
-            submit.classList.add('sent');
+            submitButton.classList.add('sent');
+            form.reset();
             //  show sent confirmation for 2 seconds before resetting
-            setTimeout(() => submit.classList.remove('sent'), 2000);
+            setTimeout(() => submitButton.classList.remove('sent'), 2000);
         } else {
-            // TODO: add an element to page displaying error message
-            console.log(response.message);
+            if (response.message === 'Failed to fetch') {
+                errorAlert.textContent = 'Can\'t connect to server.'
+            } else {
+                errorAlert.textContent = response.message;
+            }
+
+            errorAlert.classList.add('contact-form__error--visible');
         }
     }
 }
