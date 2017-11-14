@@ -158,7 +158,7 @@ function formHandler(e) {
 // Creates and sends a response to the contact server,
 // then returns a Promise to be handled in the calling scope
 function send(data) {
-    const endpoint = 'https://jacobschmocker.com/contact';
+    const endpoint = '/contact';
     const headers = new Headers();
     headers.set('Content-Type', 'application/json');
 
