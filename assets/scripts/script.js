@@ -1,3 +1,12 @@
+// hack to 100vh sections on android
+if (/android/i.test(navigator.userAgent) || /arm/i.test(navigator.platorm)) {
+    const landing = document.querySelector('.landing'),
+          contact = document.querySelector('.contact');
+
+    landing.style.height = window.innerHeight + 'px';
+    contact.style.height = window.innerHeight + 'px';
+}
+
 // TODO: Desperately-needed refactor
 
 let landingHeight = document.getElementsByClassName('landing')[0].clientHeight,
